@@ -1,6 +1,6 @@
 ﻿using e3;
 
-namespace e3PluginDemo.Com.Interfaces
+namespace e3PluginDemo.Com
 {
     using Interfaces;
 

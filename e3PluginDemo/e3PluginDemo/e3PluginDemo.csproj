@@ -80,7 +80,7 @@
     <Compile Include="Com\ComSheetHighlightSegment.cs" />
     <Compile Include="Com\ComSheetText.cs" />
     <Compile Include="Com\ComWindow.cs" />
-    <Compile Include="Com\Interfaces\ComPreload.cs" />
+    <Compile Include="Com\ComPreload.cs" />
     <Compile Include="Com\Interfaces\IComBOM.cs" />
     <Compile Include="Com\Interfaces\IComMessage.cs" />
     <Compile Include="Com\Interfaces\IComPreload.cs" />
