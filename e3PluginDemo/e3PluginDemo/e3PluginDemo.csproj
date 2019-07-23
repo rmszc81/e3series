@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5DDFA933-0EDE-46CC-AEBE-AAD65BDD643D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>e3PluginDemo</RootNamespace>
+    <AssemblyName>e3PluginDemo</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Autofac, Version=4.9.2.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.4.9.2\lib\net45\Autofac.dll</HintPath>
+    </Reference>
+    <Reference Include="E3_PlugIn, Version=1.0.0.0, Culture=neutral, PublicKeyToken=e46dce261648b9a0, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>lib\E3_PlugIn.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.e3.v2018.19.22.184010, Version=19.13.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <HintPath>lib\Interop.e3.v2018.19.22.184010.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Com\ComBOM.cs" />
+    <Compile Include="Com\ComMessage.cs" />
+    <Compile Include="Com\ComProjectText.cs" />
+    <Compile Include="Com\ComSheetHighlightSegment.cs" />
+    <Compile Include="Com\ComSheetText.cs" />
+    <Compile Include="Com\ComWindow.cs" />
+    <Compile Include="Com\Interfaces\ComPreload.cs" />
+    <Compile Include="Com\Interfaces\IComBOM.cs" />
+    <Compile Include="Com\Interfaces\IComMessage.cs" />
+    <Compile Include="Com\Interfaces\IComPreload.cs" />
+    <Compile Include="Com\Interfaces\IComProjectText.cs" />
+    <Compile Include="Com\Interfaces\IComSheetHighlightSegment.cs" />
+    <Compile Include="Com\Interfaces\IComSheetText.cs" />
+    <Compile Include="Com\Interfaces\IComWindow.cs" />
+    <Compile Include="ContainerInterop.cs" />
+    <Compile Include="ContainerManaged.cs" />
+    <Compile Include="Controls\UserControlExample.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\UserControlExample.Designer.cs">
+      <DependentUpon>UserControlExample.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\HelperExtensions.cs" />
+    <Compile Include="Helpers\HelperIcon.cs" />
+    <Compile Include="Helpers\HelperControl.cs" />
+    <Compile Include="Helpers\Interfaces\IHelperControl.cs" />
+    <Compile Include="Helpers\Interfaces\IHelperExtensions.cs" />
+    <Compile Include="Helpers\Interfaces\IHelperIcon.cs" />
+    <Compile Include="Modules\Managed\ModuleControls.cs" />
+    <Compile Include="Plugin\PluginLoader.cs" />
+    <Compile Include="Modules\Managed\ModuleHelper.cs" />
+    <Compile Include="Modules\Managed\ModuleCom.cs" />
+    <Compile Include="Modules\Managed\ModulePlugin.cs" />
+    <Compile Include="Modules\Interop\ModuleCom.cs" />
+    <Compile Include="Plugin\Interfaces\IPluginMenu.cs" />
+    <Compile Include="Plugin\PluginMenu.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Icons\Icon.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Lib\E3_PlugIn.dll" />
+    <Content Include="Lib\Interop.e3.v2018.19.22.184010.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Controls\UserControlExample.resx">
+      <DependentUpon>UserControlExample.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
